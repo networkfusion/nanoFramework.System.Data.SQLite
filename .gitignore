@@ -54,7 +54,6 @@ artifacts/
 *.pdb
 *.pgc
 *.pgd
-*.rsp
 *.sbr
 *.tlb
 *.tli
@@ -251,7 +250,10 @@ paket-files/
 .idea/
 *.sln.iml
 
+#sonarcloud
+.sonarqube
+
 #SoundCloud
 *.sonarqube/
-/source/nanoFramework.System.Data.Sqlite/Stubs/System.Data.Sqlite
-/source/nanoFramework.System.Data.Sqlite/Stubs/nanoFramework.System.Data.Sqlite
+*.slconfig
+*.ruleset
