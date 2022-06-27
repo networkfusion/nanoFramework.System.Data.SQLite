@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Runtime.CompilerServices;
-using Windows.Storage;
 
 //https://docs.microsoft.com/en-us/dotnet/standard/data/sqlite/compare
 //based upon GHI (to get working) but trying to change to be close to https://github.com/Faithlife/System.Data.SQLite
@@ -52,16 +51,19 @@ namespace System.Data.Sqlite
             nativePointer = 0;
             disposed = false;
 
-            file = StorageFile.GetFileFromPath(file).ToString();  //Path.GetFullPath(file); //TODO: is this actually equivilent? anyway, should we just require a full path to the file, so that we dont need the windows.storage dependency!
-
-            if (file == null)
+            //file = StorageFile.GetFileFromPath(file).ToString();  //Path.GetFullPath(file); //TODO: is this actually equivilent? anyway, should we just require a full path to the file, so that we dont need the windows.storage dependency!
+            if (System.IO.File.Exists(file))
             {
-                throw new ArgumentException("You must provide a valid file.", nameof(file));
-            }
 
-            if (NativeOpen(file) != SQLITE_OK) //SQLiteErrorCode.Ok
-            {
-                throw new OpenException();
+                //if (file == null)
+                //{
+                //    throw new ArgumentException("You must provide a valid file.", nameof(file));
+                //}
+
+                if (NativeOpen(file) != SQLITE_OK) //SQLiteErrorCode.Ok
+                {
+                    throw new OpenException();
+                }
             }
         }
 
