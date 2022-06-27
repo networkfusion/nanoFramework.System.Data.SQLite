@@ -6,11 +6,11 @@
                                                                                
 ===================================================================================
 
-API docs: https://docs.nanoframework.net/api/nanoFramework.Json.html
+API docs: https://docs.nanoframework.net/api/System.Device.I2s.html
 
 Browse our samples repository: https://github.com/nanoframework/samples
 
-Check our documentation online: https://docs.nanoframework.net
+Check our documentation online: https://docs.nanoframework.net/
 
 Join our lively Discord community: https://discord.gg/gCyBu8T
 
