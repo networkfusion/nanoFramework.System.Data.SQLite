@@ -5,10 +5,12 @@ namespace System.Data.Sqlite
 {
     public class ResultSet
     {
-        public int RowCount { get; private set; }
-        public int ColumnCount { get; }
-        public string[] ColumnNames { get; }
-        public ArrayList Data { get; }
+        // These needs to be a native backing field, auto proprties will not work!
+        // TODO: adjust callers to deal with them!
+        public int RowCount; // { get; private set; }
+        public int ColumnCount; // { get; }
+        public string[] ColumnNames; // { get; }
+        public ArrayList Data; // { get; }
 
         public ArrayList this[int row]
         {

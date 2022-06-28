@@ -7,6 +7,9 @@ using System.Runtime.CompilerServices;
 namespace System.Data.Sqlite
 {
     //Most of this should be internal and called by SQLiteConnection
+    /// <summary>
+    /// Sqlite implementation of DbCommand.
+    /// </summary>
     public class SqliteCommand : IDisposable
     {
         //actually, we should be using Enum SQLiteColumnType
