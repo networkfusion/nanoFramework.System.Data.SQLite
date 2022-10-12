@@ -1,27 +1,26 @@
-﻿using System.Threading;
-using System.Diagnostics;
+﻿using System.Diagnostics;
 using System.Collections;
 using System.Data.Sqlite;
+using nanoFramework.TestFramework;
 
 namespace System.Data.SQLite.Test
 {
-    public class Program
+    [TestClass]
+    public class UnitTests
     {
-        public static void Main()
+        [Setup]
+        public void Setup()
         {
-            Debug.WriteLine("SQLite Tests!");
+            Debug.WriteLine("Setting up SQLite Tests!");
 
-            Debug.WriteLine("SQLite RAM DB");
-            RunTests();
+            Debug.WriteLine("Setup SQLite RAM DB");
 
             //TODO: run tests for file system DB!
-
-
-            Thread.Sleep(Timeout.Infinite);
+            //Debug.WriteLine("Setup SQLite FS DB");
         }
 
-
-        private static void RunTests()
+        [TestMethod]
+        public void RunRamDbTests()
         {
 
             using (var db = new SqliteCommand())
@@ -60,6 +59,13 @@ namespace System.Data.SQLite.Test
                     Debug.WriteLine("");
                 }
             }
+            Assert.SkipTest("fixme!");
+        }
+
+        [Cleanup]
+        public void DisposeDatabase()
+        {
+            //Debug.WriteLine("TODO: Ensure cleanup!");
         }
     }
 }
