@@ -6,14 +6,12 @@ using nanoFramework.TestFramework;
 namespace System.Data.SQLite.Test
 {
     [TestClass]
-    public class UnitTests
+    public class FileDbUnitTests
     {
         [Setup]
         public void Setup()
         {
             Debug.WriteLine("Setting up SQLite Tests!");
-
-            Debug.WriteLine("Setup SQLite RAM DB");
 
             //TODO: run tests for file system DB!
             //Debug.WriteLine("Setup SQLite FS DB");
