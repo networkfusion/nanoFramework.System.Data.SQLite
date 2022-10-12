@@ -17,6 +17,8 @@
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
     <NF_IsCoreLibrary>True</NF_IsCoreLibrary>
     <DocumentationFile>bin\$(Configuration)\nanoFramework.System.Data.Sqlite.xml</DocumentationFile>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <RestoreLockedMode Condition="'$(TF_BUILD)' == 'True' or '$(ContinuousIntegrationBuild)' == 'True'">true</RestoreLockedMode>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -57,6 +59,7 @@
   <ItemGroup>
     <None Include="key.snk" />
     <None Include="packages.config" />
+    <None Include="packages.lock.json" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib">
